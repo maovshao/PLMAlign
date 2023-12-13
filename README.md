@@ -37,7 +37,11 @@ tar zxvf plmalign_data.tar.gz
 ## Run PLMAlign
 <span id="pipeline"></span>
 
-- Run PLMSearch by following the example in [pipeline.ipynb](pipeline.ipynb).
+PLMAlign   webserver : [dmiip.sjtu.edu.cn/PLMAlign](https://dmiip.sjtu.edu.cn/PLMAlign/) :airplane:
+
+PLMSearch  webserver : [dmiip.sjtu.edu.cn/PLMSearch](https://dmiip.sjtu.edu.cn/PLMSearch/) 🚀
+
+PLMSearch source code : [github.com/maovshao/PLMSearch](https://github.com/maovshao/PLMSearch/) :helicopter:
 
 **Notice: the inputs and outputs of the example are saved in** `example/`.
 
@@ -47,9 +51,11 @@ tar zxvf plmalign_data.tar.gz
 Reproduce all our experiments with good visualization by following the steps in:
 - Malidup: [malidup.ipynb](malidup.ipynb).
 - Malisam: [malisam.ipynb](malisam.ipynb).
+
 **Notice: Detailed results are saved in** `data/alignment_benchmark/result/`.
 
 - SCOPe40: [scope40.ipynb](scope40.ipynb).
+
 **Notice: Detailed results are saved in** `data/scope40_test/output/`.
 
 ## Citation
