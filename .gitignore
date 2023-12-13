@@ -1,0 +1,11 @@
+# Folders #
+###########
+__pycache__/
+.ipynb_checkpoints/
+.vscode/
+to_remove/
+data/
+
+# Junk #
+########
+.DS_Store*
