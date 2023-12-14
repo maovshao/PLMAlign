@@ -28,7 +28,7 @@ Follow the steps in [requirements.sh](requirements.sh).
 ## Data preparation
 <span id="data-preparation"></span>
 
-We have released our experiment data in [plmalign_data](https://dmiip.sjtu.edu.cn/PLMSearch/static/download/plmalign_data.tar.gz).
+We have released our experiment data in [plmalign_data](https://dmiip.sjtu.edu.cn/PLMAlign/static/download/plmalign_data.tar.gz).
 ```bash
 wget https://dmiip.sjtu.edu.cn/PLMSearch/static/download/plmalign_data.tar.gz
 tar zxvf plmalign_data.tar.gz
