@@ -18,9 +18,9 @@ Specifically, PLMAlign can achieve <b>local</b> and <b>global</b> alignment. The
 ## Webserver
 <span id="webserver"></span>
 
-PLMAlign   webserver : [dmiip.sjtu.edu.cn/PLMAlign](https://dmiip.sjtu.edu.cn/PLMAlign/) :airplane:
+PLMAlign   web server : [dmiip.sjtu.edu.cn/PLMAlign](https://dmiip.sjtu.edu.cn/PLMAlign/) :airplane:
 
-PLMSearch  webserver : [dmiip.sjtu.edu.cn/PLMSearch](https://dmiip.sjtu.edu.cn/PLMSearch/) 🚀
+PLMSearch  web server : [dmiip.sjtu.edu.cn/PLMSearch](https://dmiip.sjtu.edu.cn/PLMSearch/) 🚀
 
 PLMSearch source code : [github.com/maovshao/PLMSearch](https://github.com/maovshao/PLMSearch/) :helicopter:
 
@@ -34,7 +34,7 @@ Follow the steps in [requirements.sh](requirements.sh)
 
 We have released our experiment data in [plmalign_data](https://dmiip.sjtu.edu.cn/PLMAlign/static/download/plmalign_data.tar.gz).
 ```bash
-wget https://dmiip.sjtu.edu.cn/PLMSearch/static/download/plmalign_data.tar.gz
+wget https://dmiip.sjtu.edu.cn/PLMAlign/static/download/plmalign_data.tar.gz
 tar zxvf plmalign_data.tar.gz
 ```
 
