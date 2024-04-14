@@ -4,7 +4,7 @@ from typing import Union, List, Tuple, Dict
 import numpy as np
 import pandas as pd
 
-from .numeric import fill_score_matrix, traceback_from_point_opt2, move_mean, find_alignment_span
+from .numeric import fill_score_matrix, traceback_from_point_opt2
 
 def get_borderline(a: np.array, cutoff_h: int = 10, cutoff_w: int = 10) -> np.ndarray:
 	'''

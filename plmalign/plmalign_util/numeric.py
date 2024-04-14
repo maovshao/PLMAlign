@@ -79,48 +79,6 @@ def fill_score_matrix(sub_matrix: np.ndarray,
 	return score_matrix
 
 
-@numba.njit('f4[:](f4[:], i4)', nogil=True, fastmath=True, cache=True)
-def move_mean(a: np.ndarray, window_width: int):
-	'''
-	Moving average
-	first and last elements are constant
-	Args:
-		a: (np.ndarray np.float32)
-		window_width: (int)
-	Returns:
-		a_ma: (np.ndarray np.float32)
-	'''
-	asum: float = 0.0
-	count = 0
-	mean0 = 0.0
-	a_size = a.shape[0]
-	out = np.zeros_like(a, dtype=np.float32)
-	pad_start = window_width
-	pad_end = a_size - window_width
-	# clip boundaries
-	if pad_start >= a_size:
-		pad_start = a_size
-	if pad_end < 0:
-		pad_end = a_size
-	for i in range(0, pad_start):
-		asum +=  a[i]
-		count += 1
-	mean0 = asum / count
-	# fill first elements with its mean
-	for i in range(pad_start):
-		out[i] = mean0
-	# fill middle
-	for i in range(pad_start, pad_end):
-		asum = asum + a[i] - a[i - window_width]
-		out[i] = asum / count
-	# fill last elements
-	for i in range(pad_end, a_size):
-		out[i] = asum / count
-
-	out = out * (a > 0)
-	return out
-
-
 @numba.njit('types.Tuple((f4, i4))(f4, f4, f4)', cache=True)
 def max_from_3(x: float, y: float, z: float) -> Tuple[float, int]:
 	'''
@@ -211,43 +169,4 @@ def traceback_from_point_opt2(scoremx: np.ndarray, point: Tuple[int, int],
 	# not done
 	path_arr = path_arr[:position, :]
 	return path_arr
-
-
-@numba.njit(cache=True)
-def find_alignment_span(means: np.ndarray, minlen: int = 10,
-						mthreshold: float = 0.10) -> List[Tuple[int, int]]:
-	'''
-	search for points matching `mthreshold`
-	Args:
-		means: (np.ndarray)
-		mthreshold: (int) minimal allowed length of span
-	Returns:
-		spans: (list of tuples) coresponding to similarity sequence range 
-	'''
-	assert minlen > 0
-
-	num_points: int = means.shape[0]
-	alnlen: int = 0
-	alnstart: int = 0
-	spans: list = []
-	# iterate over path scores
-	for i in range(num_points):
-		alnlen = alnlen + 1
-		# if False break current alignment building
-		if means[i] < mthreshold:
-			# minimal len criteria is filled save alignment span
-			# save without current index
-			if minlen < alnlen:
-				alnstop = i - 1
-				spans.append((alnstart, alnstop))
-			# start new alignment or reset
-			# reinitialize params setting start point to the next iteration
-			alnstart = i + 1
-			alnstop = i + 1
-			alnlen = 0
-	# handle last iteration
-	if alnlen > minlen:
-		alnstop = i
-		spans.append((alnstart, alnstop))
-	return spans
 
