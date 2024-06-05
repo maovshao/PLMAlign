@@ -1,5 +1,7 @@
 # PLMAlign
 
+- 2024.6.5 Update: We have uploaded the `Dataset of PLMSearch & PLMAlign` in [Zenodo](https://zenodo.org/records/11480660). 
+
 This is the implement of <b>PLMAlign</b>, a pairwise protein sequence alignment tool in "PLMSearch: Protein language model powers accurate and fast sequence search for remote homology". PLMAlign takes per-residue embeddings as input to obtain specific alignments and corresponding alignment scores.
 
 Specifically, PLMAlign can achieve <b>local</b> and <b>global</b> alignment. The specific algorithm and parameters are similar to the [SW](https://www.ebi.ac.uk/Tools/psa/emboss_water/) and [NW](https://www.ebi.ac.uk/Tools/psa/emboss_needle/) algorithms implemented by [EMBL-EBI](https://www.ebi.ac.uk/). However, by converting a fixed substitution matrix into similarity calculated by the dot product of per-residue embeddings, PLMAlign is able to capture deep evolutionary information and perform better on remote homology protein pairs.
@@ -32,8 +34,9 @@ Follow the steps in [requirements.sh](requirements.sh)
 ## Data preparation
 <span id="data-preparation"></span>
 
-We have released our experiment data in [plmalign_data](https://dmiip.sjtu.edu.cn/PLMAlign/static/download/plmalign_data.tar.gz).
+We have released our experiment data, which can be downloaded from [plmalign_data](https://dmiip.sjtu.edu.cn/PLMAlign/static/download/plmalign_data.tar.gz) or [Zenodo](https://zenodo.org/records/11480660).
 ```bash
+# Use the following command or download it from https://zenodo.org/records/11480660
 wget https://dmiip.sjtu.edu.cn/PLMAlign/static/download/plmalign_data.tar.gz
 tar zxvf plmalign_data.tar.gz
 ```
