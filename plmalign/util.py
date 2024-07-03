@@ -23,6 +23,12 @@ def make_parent_dir(path):
     filepath = Path(path)
     filepath.parent.mkdir(parents=True, exist_ok=True)
 
+# Copyright (c) 2022 Laboratory of Structural Bioinformatics
+#
+# This file is modified from [https://github.com/labstructbioinf/pLM-BLAST].
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
 @numba.njit('f4[:,:](f4[:,:], f4[:,:])', nogil=True, fastmath=True, cache=True)
 def dot_product(X: np.ndarray, Y: np.ndarray) -> np.ndarray:
 	assert X.ndim == 2 and Y.ndim == 2
