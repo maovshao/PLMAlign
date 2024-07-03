@@ -4,7 +4,7 @@
 
 This is the implement of <b>PLMAlign</b>, a pairwise protein sequence alignment tool in "PLMSearch: Protein language model powers accurate and fast sequence search for remote homology". PLMAlign takes per-residue embeddings as input to obtain specific alignments and corresponding alignment scores.
 
-Specifically, PLMAlign can achieve <b>local</b> and <b>global</b> alignment. The specific algorithm and parameters are similar to the [SW](https://www.ebi.ac.uk/Tools/psa/emboss_water/) and [NW](https://www.ebi.ac.uk/Tools/psa/emboss_needle/) algorithms implemented by [EMBL-EBI](https://www.ebi.ac.uk/). However, by converting a fixed substitution matrix into similarity calculated by the dot product of per-residue embeddings, PLMAlign is able to capture deep evolutionary information and perform better on remote homology protein pairs.
+Specifically, PLMAlign can achieve <b>local</b> and <b>global</b> alignment. The specific algorithm and parameters are similar to the [SW](https://www.ebi.ac.uk/Tools/psa/emboss_water/) and [NW](https://www.ebi.ac.uk/Tools/psa/emboss_needle/) algorithms implemented by [EMBL-EBI](https://www.ebi.ac.uk/) and [pLM-BLAST](https://github.com/labstructbioinf/pLM-BLAST). However, by converting a fixed substitution matrix into similarity calculated by the dot product of per-residue embeddings, PLMAlign is able to capture deep evolutionary information and perform better on remote homology protein pairs.
 
 <div align=center><img src="example/figure/framework.png" width="100%" height="100%"/></div>
 
